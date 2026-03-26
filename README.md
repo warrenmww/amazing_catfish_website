@@ -3,5 +3,5 @@ This is from a college HCI course, but I love it so much I must put it on Github
 Clearly, it's hire-worthy.
 
 **IMPORTANT:** <br>
-<hl>
+-------------------
 Download all images for the website to show properly.
