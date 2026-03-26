@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Icon for page -->
+    <link rel="icon" type="image/png" href="imgs/fihh.png">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Megan Warren">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img id="follow" src="imgs/catfih2.png" />
+
+    <Title>XML Shenanigans</Title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(#ffffff, #46496b) no-repeat fixed;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h3 {
+            position: relative;
+            font-size: 50px;
+            text-shadow: #0000ff 0px 0px 4px;
+            padding: 0;
+            margin: 0;
+            top: 0px;
+            text-align: center;
+            animation: continueScroll 7s linear infinite;
+            white-space: nowrap;
+            word-spacing: 50px;
+        }
+
+        .catfish-container {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Animation for #CatfishGang */
+        @keyframes continueScroll {
+            0% {
+                transform: translateX(-100%);
+                transition-duration: 8ms;
+            }
+
+            100% {
+                transform: translateX(10%);
+                transition-duration: 8ms;
+            }
+        }
+
+        h2 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            position: relative;
+            top: 0px;
+            font-size: 40px;
+            overflow: hidden;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: #000004 0px 0px 6px;
+            margin: 0;
+        }
+
+        #follow {
+            position: fixed;
+            z-index: 5000;
+            pointer-events: none;
+            width: 70px;
+        }
+
+        #clickPrompt {
+            position: relative;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        div.h1-container {
+            position: relative;
+            border: 8px solid white;
+            top: 10px;
+            max-width: 100dvw;
+            max-height: 100dvh;
+            background-position: center;
+            background-color: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .xml-button {
+            display: block;
+            margin: 55px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .xml-button:hover {
+            background-color: #45a049;
+        }
+
+        .press-button {
+            text-align: center;
+            margin-top: 50px;
+            font-weight: 500;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+
+        .fihh2 {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #ad {
+            position: absolute;
+            z-index: 9;
+            background-color: #f1f1f1;
+            border: 1px solid #d3d3d3;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #ad2 {
+            position: absolute;
+            left: 75%;
+            top: 60%;
+            z-index: 9;
+            background-color: #f1f1f1;
+            border: 1px solid #d3d3d3;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #adheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            color: #000000;
+            background-color: yellow;
+            font-weight: 700;
+            border-radius: 10px;
+            letter-spacing: 8px;
+        }
+        #ad2header {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            color: #000000;
+            font-weight: 700;
+            border-radius: 10px;
+            background-color: pink;
+        }
+
+        .ad-image {
+            width: 250px;
+            height: 130px;
+            left: 0;
+            padding-bottom: 10px;
+        }
+
+        .feesh {
+            width: 130px;
+            height: 140px;
+            position: relative;
+            right: 100px;
+            z-index: 2;
+        }
+        .saletext {
+            font-size: 15px;
+            font-weight: 500;
+            color: #000000;
+            text-align: right;
+            position: absolute;
+        }
+        .fishlady {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            bottom: 25px;
+            border-radius: 10px;
+        }
+        .link {
+            position: relative;
+            font-size: 10px;
+            top: 165px;
+            background-color: rgba(192, 255, 255, 0.553);
+        }
+        .limited{
+            position: relative;
+            font-size: 10px;
+            top: 150px;
+        }
+        .side-effects{
+            position: relative;
+            font-size: 10px;
+            top: 135px;
+            background-color: rgba(255, 192, 203, 0.62);
+        }
+        .intro{
+            text-align: left;
+        }
+        .moreintro{
+            text-align: left;
+        }
+        #exit {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgb(255, 92, 92);
+            border: none;
+            font-size: 16px;
+            border-radius: 25px;
+            border: 1px solid #2b2a2a;
+            font-weight: bold;
+        }
+        #exit2 {
+            position: absolute;
+            top: 10px;
+            left: 6px;
+            background-color: rgb(255, 92, 92);
+            border: none;
+            font-size: 16px;
+            border-radius: 25px;
+            border: 1px solid #2b2a2a;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="ad">
+        <div id="adheader">Special Sale!</div>
+        <button id="exit" onclick="document.getElementById('ad').style.display='none'">×</button>
+        <div class="ad-content">
+            <p class="saletext">Catfish pills to super-grow your muscles! Only $99.99!</p>
+            <p class="side-effects">Side effects may include death. Consult a physician before use.</p>
+            <p class="limited">Limited time only</p>
+        </div>
+        <img class="ad-image" src="imgs/pill-bottle.png" alt="Ad for Catfish Pills">
+        <img class="feesh" src="imgs/catfihhh.png" alt="Catfish">
+    </div>
+
+    <div id="ad2">
+        <div id="ad2header">😝 💖 Madelene Gills: 5 miles away</div>
+        <button id="exit2" onclick="document.getElementById('ad2').style.display='none'">×</button>
+        <div class="ad2-content">
+            <p class="intro">Looking for someone to feed me worms 🪱</p>
+            <p class="moreintro">42, Friendly, Beaches 🏖️</p>
+            <p class="link">This is a sponsored ad by <u>plentyofCatfish.com</u></p>
+        </div>
+        <img class="fishlady" src="imgs/spongebob-fish.png" alt="Madelene Gills">
+    </div>
+
+    <div class="catfish-container">
+        <h3>#CatfishGang #CatfishGang #CatfishGang #CatfishGang #CatfishGang #CatfishGang #CatfishGang</h3>
+    </div>
+
+    <div class="h1-container">
+        <h1 class="fih1">This is a Catfish!</h1>
+        <img class="fihh2" src="imgs/catfih3.png" alt="Catfish">
+        <p id="clickPrompt">click on the image</p>
+    </div>
+    </div>
+
+    <p class="press-button">Press this button for more Catfish magic:</p>
+    <!--Change button below to load XML on click.-->
+    <button class="xml-button" onclick="">Click Button for XML</button>
+    <p id="newHTML"></p>
+</body>
+
+<script>
+    function outputConsole() {
+        console.log("Hello, world!");
+    }
+
+    function makeDialog() {
+        alert("Hello, world!");
+    }
+
+    function alterHTML() {
+        document.getElementById("newHTML").innerHTML = "Hello, world!";
+    }
+
+    function loadXMLDoc() {
+        //Code to do XML HTTP request (see slides) goes here
+
+    }
+
+    dragElement(document.getElementById("ad")); // src: W3Schools
+    dragElement2(document.getElementById("ad2")); 
+
+    function dragElement(element) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("adheader")) {
+            document.getElementById("adheader").onmousedown = dragMouseDown;
+        } else {
+            element.onmousedown = dragMouseDown;
+        }
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            element.style.top = (element.offsetTop - pos2) + "px";
+            element.style.left = (element.offsetLeft - pos1) + "px";
+        }
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    function dragElement2(element) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("ad2header")) {
+            document.getElementById("ad2header").onmousedown = dragMouseDown;
+        } else {
+            element.onmousedown = dragMouseDown;
+        }
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            element.style.top = (element.offsetTop - pos2) + "px";
+            element.style.left = (element.offsetLeft - pos1) + "px";
+        }
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    const followImage = document.getElementById('follow');
+    const followText = document.getElementById('clickPrompt');
+    
+    document.addEventListener('mousemove', (event) => {
+        followImage.style.top = event.clientY + 'px';
+        followImage.style.left = event.clientX + 'px';
+    });
+    document.addEventListener('mousemove', (event) => {
+        followText.style.bottom = event.clientY + 'px';
+        followText.style.left = event.clientX + 'px';
+    });
+
+    const press = document.querySelector('.fihh2');
+    function changePic() {
+        let catfishPic = document.querySelector('.fihh2');
+        catfishPic.src = 'imgs/catfish-fishing.gif';
+        catfishPic.style.width = '400px';
+        catfishPic.alt = 'New Catfish Image';
+    };
+    function changeText() {
+        let catfishText = document.querySelector('.fih1');
+        catfishText.textContent = "This is not a Catfish!";
+    };
+    function changeText2() {
+        let text = document.getElementById('clickPrompt');
+        text.textContent = "Refresh the page";
+    }
+    function changeCursor() {
+        let cursorPic = document.querySelector('#follow');
+        cursorPic.src = 'imgs/cat-point.png';
+        cursorPic.style.width = '80px';
+        cursorPic.alt = 'Cat Pointing with Right Paw';
+    };
+    function changeCursorBack() {
+        let cursorPic = document.querySelector('#follow');
+        cursorPic.src = 'imgs/catfih2.png';
+        cursorPic.style.width = '70px';
+        cursorPic.alt = 'Catfish Cursor';
+    };
+    document.querySelector('.fihh2').addEventListener('click', changeText);
+    document.querySelector('.fihh2').addEventListener('click', changePic);
+    document.querySelector('.fihh2').addEventListener('click', changeText2);
+    document.querySelector('.xml-button').addEventListener('mouseover', changeCursor)
+    document.querySelector('.xml-button').addEventListener('mouseleave', changeCursorBack)
+
+    function myFunction(xml) {
+        var x, i, xmlDoc, txt;
+        xmlDoc = xml.responseXML; //Response returned as XML data
+        txt = "";
+        x = xmlDoc.getElementsByTagName("ThemeEntityAbridgedData");
+        console.log(x[1]);
+        //for (i = 0; i< x.length; i++) {
+        //    txt += x[i].childNodes[1].innerHTML + "<br>";
+        //}
+    }
+
+    loadXMLDoc();
+
+</script>
+
+</html>
